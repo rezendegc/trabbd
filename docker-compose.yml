@@ -1,0 +1,27 @@
+version: '3'
+services:
+  php-apache:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - ./web:/var/www/html:z
+    network_mode: host
+
+  mysql:
+    image: mysql
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: ''
+      MYSQL_DATABASE: 'trabbd'
+    network_mode: host
+
+volumes:
+  mysql:  
