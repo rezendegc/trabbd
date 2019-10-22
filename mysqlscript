@@ -1,0 +1,7 @@
+CREATE TABLE `trabbd`.`users` (
+  `id` CHAR(36) NOT NULL,
+  `name` CHAR(64) NOT NULL,
+  `username` CHAR(32) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC));
