@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "CRIANDO BANCO DE DADOS"
 # SEED RELEVANCIA 1
 file="/var/local/lista_relevancia_1.txt"
 ids="("
