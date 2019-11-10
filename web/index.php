@@ -20,10 +20,11 @@ function showHint(str) {
 </head>
 <body>
 
-<p><b>Start typing a name in the input field below:</b></p>
+<p><b><div align="center">Digite o nome que você deseja:</b></p>
 <form>
-First name: <input type="text" onkeyup="showHint(this.value)">
+<input type="text" onkeyup="showHint(this.value)">
 </form>
-<p>Suggestions: <span id="txtHint"></span></p>
+</div>
+<span id="txtHint"></span>
 </body>
 </html>

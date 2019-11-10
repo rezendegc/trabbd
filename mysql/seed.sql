@@ -1,5 +1,3 @@
-
-
 CREATE TABLE `trabbd`.`users` (
   `id` CHAR(36) NOT NULL,
   `name` CHAR(64) NOT NULL,

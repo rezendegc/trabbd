@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 1em;
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+table, td, th {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+td {
+    text-align: left;
+}
+
+th {
+    text-align: center;
+    background-color: #ACADA8;
+}
+</style>
+</head>
+<body>
+
 <?php
 $servername = "127.0.0.1";
 $username = "root";
@@ -21,10 +50,10 @@ $result = mysqli_query($conn, $query);
 
 echo "<table>
 <tr>
-<th>ID</th>
-<th>Name</th>
-<th>Username</th>
-<th>Relevancia</th>
+<th width=30%>ID</th>
+<th width=25%>Name</th>
+<th width=25%>Username</th>
+<th width=20%>Relevancia</th>
 </tr>";
 while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
