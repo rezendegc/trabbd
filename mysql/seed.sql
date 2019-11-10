@@ -2,7 +2,7 @@ CREATE TABLE `trabbd`.`users` (
   `id` CHAR(36) NOT NULL,
   `name` CHAR(64) NOT NULL,
   `username` CHAR(64) NOT NULL,
-  `relevancia` INT NULL,
+  `relevancia` INT DEFAULT 0,
   PRIMARY KEY (`id`),
   FULLTEXT(`username`,`name`)
 ) ENGINE=MyISAM;
