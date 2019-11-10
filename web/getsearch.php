@@ -53,7 +53,9 @@ if ($r === null || $r === "") {
     $r = 2;
 }
 
-$query = "SELECT * FROM trabbd.users WHERE MATCH(name, username) AGAINST ('" . $q . "*' IN BOOLEAN MODE) AND (name, username) > ('" . $n . "', '" . $u . "') AND relevancia <= '" . $r . "' ORDER BY relevancia DESC, name, username LIMIT 16;";
+$q = str_replace(" ", " +", $q);
+
+$query = "SELECT * FROM trabbd.users WHERE MATCH(name, username) AGAINST ('+" . $q . "*' IN BOOLEAN MODE) AND (name, username) > ('" . $n . "', '" . $u . "') AND relevancia <= '" . $r . "' ORDER BY relevancia DESC, name, username LIMIT 16;";
 
 $result = mysqli_query($conn, $query);
 

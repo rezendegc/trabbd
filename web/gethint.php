@@ -46,7 +46,9 @@ if ($conn->connect_error) {
 // get the q parameter from URL
 $q = $_REQUEST["q"];
 
-$query = "SELECT name, username FROM trabbd.users WHERE MATCH(name, username) AGAINST ('" . $q . "*' IN BOOLEAN MODE) ORDER BY relevancia DESC LIMIT 3;";
+$q = str_replace(" ", " +", $q);
+
+$query = "SELECT name, username FROM trabbd.users WHERE MATCH(name, username) AGAINST ('+" . $q . "*' IN BOOLEAN MODE) ORDER BY relevancia DESC, name, username DESC LIMIT 3;";
 
 $result = mysqli_query($conn, $query);
 
