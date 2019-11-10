@@ -81,7 +81,7 @@ while ($row = mysqli_fetch_array($result)) {
 echo "</table>";
 
 if ($u !== null && $u !== "") {
-    echo '<button id="prev" onclick="previousPage()"> Voltar página ' . $u . '</button>';
+    echo '<button id="prev" onclick="previousPage()"> Voltar página </button>';
 }
 
 if ($count === 16) {
